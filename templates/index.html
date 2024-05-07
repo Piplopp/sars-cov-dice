@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}SARS-CoV-Dice{% endblock %}
+
+{% block content %}
+<div class="input-section">
+    <h1>Dice selection</h1>
+    <form id="diceForm">
+        <div class="dice-inputs">
+            {% for die in [2, 4, 6, 8, 10, 12, 20, 100] %}
+            <label for="d{{ die }}">d{{ die }}:</label>
+            <input type="number" id="d{{ die }}" name="d{{ die }}" min="0">
+            {% endfor %}
+        </div>
+        <label for="num_repeats">Number of Repeats:</label>
+        <input type="number" id="num_repeats" name="num_repeats" min="1">
+        <button type="button" onclick="rollDice()">Roll Dice</button>
+    </form>
+</div>
+<div class="graph-section">
+    <h1>Graph</h1>
+    <div class="charts">
+        <div class="chart-placeholder">
+            Charts will appear here once you roll the dice.
+        </div>
+    </div>
+</div>
+{% endblock %}
