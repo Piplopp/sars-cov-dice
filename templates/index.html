@@ -10,6 +10,13 @@
             {% from "macros/render_form.jinja2" import render_form_field %}
             {%for die in dice_form %}
                 {{ render_form_field(die) }}
+                {% if die.errors %}
+                    <div class="invalid-input">
+                        {% for error in die.errors %}
+                            <span>{{ error }}</span><br />
+                        {% endfor %}
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
         <button type="button" onclick="rollDice()">Roll Dice</button>
