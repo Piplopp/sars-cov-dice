@@ -7,13 +7,11 @@
     <h1>Dice selection</h1>
     <form id="diceForm">
         <div class="dice-inputs">
-            {% for die in [2, 4, 6, 8, 10, 12, 20, 100] %}
-            <label for="d{{ die }}">d{{ die }}:</label>
-            <input type="number" type="number" id="d{{ die }}" name="d{{ die }}" min="0">
+            {% from "macros/render_form.jinja2" import render_form_field %}
+            {%for die in dice_form %}
+                {{ render_form_field(die) }}
             {% endfor %}
         </div>
-        <label for="num_repeats">Number of Repeats:</label>
-        <input type="number" type="number" id="num_repeats" name="num_repeats" min="1">
         <button type="button" onclick="rollDice()">Roll Dice</button>
     </form>
 </div>

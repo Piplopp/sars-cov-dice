@@ -42,7 +42,7 @@ label {
     font-weight: bold;
 }
 
-input[type="number"] {
+input {
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -76,7 +76,7 @@ button:hover {
     font-size: 14px;
 }
 
-.dice-inputs input[type="number"] {
+.dice-inputs input {
     width: 100%;
 }
 
