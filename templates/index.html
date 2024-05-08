@@ -9,11 +9,11 @@
         <div class="dice-inputs">
             {% for die in [2, 4, 6, 8, 10, 12, 20, 100] %}
             <label for="d{{ die }}">d{{ die }}:</label>
-            <input type="number" id="d{{ die }}" name="d{{ die }}" min="0">
+            <input type="number" type="number" id="d{{ die }}" name="d{{ die }}" min="0">
             {% endfor %}
         </div>
         <label for="num_repeats">Number of Repeats:</label>
-        <input type="number" id="num_repeats" name="num_repeats" min="1">
+        <input type="number" type="number" id="num_repeats" name="num_repeats" min="1">
         <button type="button" onclick="rollDice()">Roll Dice</button>
     </form>
 </div>

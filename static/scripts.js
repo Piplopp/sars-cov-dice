@@ -1,9 +1,10 @@
 function rollDice() {
     var formData = new FormData(document.getElementById('diceForm'));
-    formData.append('num_dice', 8); // You need to add num_dice manually or dynamically calculate it based on the user's input
+
     fetch('/roll_dice', {
         method: 'POST',
-        body: formData
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(Object.fromEntries(formData))
     })
         .then(response => response.json())
         .then(data => {
