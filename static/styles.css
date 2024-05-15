@@ -23,13 +23,17 @@
 }
 
 .form_field {
-    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .form_field label {
     display: block;
     margin-bottom: 5px;
     color: #333;
+    width: 20%;
 }
 
 .form_field input {
@@ -49,6 +53,7 @@
     color: #b30000;
     font-size: 80%;
     margin-top: 5px;
+    margin-left: 20%;
 }
 
 /* Button styles */
@@ -62,6 +67,7 @@ button[type="button"] {
     font-family: 'Futura', sans-serif;
     cursor: pointer;
     transition: background-color 0.5s ease;
+    margin-top: 20px;
 }
 
 button[type="button"]:hover {

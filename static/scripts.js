@@ -67,13 +67,13 @@ function validateInput(inputField, errorContainer, inputFieldType) {
 function validateDiceInputs(){
     var diceInputs = document.querySelectorAll('.dice-inputs input');
     diceInputs.forEach(function(x) {
-        validateInput(x, x.nextElementSibling, 'diceInput')
+        validateInput(x, x.parentNode.parentNode.nextElementSibling, 'diceInput')
     });
 }
 
 function validateRepeatsInput(){
     var repeatsInput = document.getElementById('n_repeats');
-    validateInput(repeatsInput, repeatsInput.nextElementSibling, 'repeatsInput')
+    validateInput(repeatsInput, repeatsInput.parentNode.parentNode.nextElementSibling, 'repeatsInput')
 }
 
 

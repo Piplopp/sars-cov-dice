@@ -6,20 +6,24 @@
 <div class="input-section">
     <h1>Dice selection</h1>
     <form id="diceForm">
-        <div class="dice-inputs">
-            {% from "macros/render_form.jinja2" import render_form_field %}
-            {%for die in dice_form %}
+        {% from "macros/render_form.jinja2" import render_form_field %}
+        {%for die in dice_form %}
+        <div class="form-line">
+            <div class="dice-inputs">
                 {{ render_form_field(die) }}
+            </div>
+            <div class="invalid-input">
                 {% if die.errors %}
-                    <div class="invalid-input">
-                        {% for error in die.errors %}
-                            <span>{{ error }}</span><br />
-                        {% endfor %}
-                    </div>
+                {% for error in die.errors %}
+                <span>{{ error }}</span><br />
+                {% endfor %}
                 {% endif %}
-            {% endfor %}
+            </div>
         </div>
-        <button type="button" onclick="rollDice()">Roll Dice</button>
+        {% endfor %}
+       <div class="form-line">
+           <button type="button" onclick="rollDice()">Roll Dice</button>
+       </div>
     </form>
 </div>
 <div class="graph-section">
